@@ -24,3 +24,13 @@ for row in range(1):
     elif col == y - 1:
       print('|', '_' * (x - 2), '|', sep = '')
     
+
+#for row in range(9):
+#  for col in range(7):
+#    if row == 0 and col == 0:
+#      print('', '-' * 9, end = ' ')
+#    elif row > 0 and row < 7 and col == 0:
+#      print( '|', ' ' * 7, '|', end = ' ')
+#    elif row == 7 and col == 6:
+#      print('|', '_' * 7, '|', end = '')
+#  print()

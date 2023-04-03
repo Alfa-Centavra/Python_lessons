@@ -14,10 +14,18 @@ print('Задача 4. Простые числа')
 # Введите число: 37.
 
 # Количество простых чисел в последовательности: 4.
-num_count = int(input('Введите количество чисел: '))
+numCount = int(input('Введите количество чисел: '))
 count = 0
-for i in range(num_count):
-  num = int(input('Введите число: '))
-  if num % 2 != 0:
-    count += 1
-print('Количество простых чисел в последовательности:', count)
+allCount = 0
+for i in range(numCount):
+  number = int(input('Введите число: '))
+  for j in range(2, number - 1):
+    if number % j == 0:
+      count += 1
+      if count != 0:
+        allCount += 1
+        count = 0
+        break
+
+print('Количество простых чисел в последовательности:', numCount - allCount)
+  
