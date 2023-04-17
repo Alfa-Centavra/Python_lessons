@@ -1,31 +1,24 @@
-def count_numbers(number):
-    count = 0
-    while number != 0:
-        count += 1
-        number //= 10
-    return count
+while True:
+    command = input("Выберите операцию: ")
+    if command in "+-*/":
+        break
+    print("Ошибка: такой операции не существует. Попробуйте ещё раз.")
 
 
-def change_number(number):
-    last_digit = number % 10
-    first_digit = number // 10**(count_numbers(number) - 1)
-    between_digits = number % 10**(count_numbers(number) - 1) // 10
-    number = last_digit * 10**(count_numbers(number) - 1) + between_digits * 10 + first_digit
-    return number
-
-
-number_1 = int(input('Введите первое число: '))
-count_numbers(number_1)
-if count_numbers(number_1) < 3:
-    print("В первом числе меньше трёх цифр.")
-else:
-    print(f"Первое число наоборот: {change_number(number_1)}")
-
-number_2 = int(input('\nВведите второе число: '))
-count_numbers(number_2)
-if count_numbers(number_2) < 4:
-    print("Во втором числе меньше четырёх цифр.")
-else:
-    print(f"Второе число наоборот: {change_number(number_2)}")
-    print(f"\nСумма измененных чисел: {change_number(number_1) + change_number(number_2)}")
-
+count = int(input('Сколько операндов? '))
+for count_number in range(1, count + 1):
+    number = int(input(f'Введите операнд {count_number}: '))
+    if count_number == 1:
+        number_result = number
+        continue
+    if command == '+':
+        number_result += number
+    elif command == '-':
+        number_result -= number
+    elif command == '*':
+        number_result *= number
+    elif command == '/':
+        number_result /= number
+    print(number_result)
+    print('****')
+print(number_result)
